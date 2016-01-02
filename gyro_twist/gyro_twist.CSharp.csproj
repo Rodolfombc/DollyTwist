@@ -68,10 +68,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Splash_To_Menu.cs" />
     <Compile Include="Assets\Scripts\Sprite_Toggler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Images\pasta-de-imagens.txt" />
     <None Include="Assets\Materials\pasta-de-materiais.txt" />
     <None Include="Assets\Music\pasta-de-musicas.txt" />
     <None Include="Assets\Prefabs\pasta-de-prefabs.txt" />
