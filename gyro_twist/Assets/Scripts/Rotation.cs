@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Rotation : MonoBehaviour {
 
@@ -85,11 +86,77 @@ public class Rotation : MonoBehaviour {
     */
 
 
+
+    public Image gameTitle;
+    public Text textObj;
+
+    private Color textColor;
+    private float textTransform;
+
+    //Variaveis para o titulo do jogo
+    private float gameTitleZRot;
+
+    void Start()
+    {
+        gameTitleZRot = 0;
+    }
+
+
+    //Metodo para gerar uma cor aleatoria
+    Color RandomColor()
+    {
+        return new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
+    }
+
+    //Metodo para redimensionar o titulo do jogo
+    void resizeGameTitle()
+    {
+        if(gameTitle.transform.localScale.x < 1.0f)
+        {
+            gameTitle.transform.localScale += new Vector3(0.01f, 0, 0);
+        }
+
+        if(gameTitle.transform.localScale.y < 1.0f)
+        {
+            gameTitle.transform.localScale += new Vector3(0, 0.01f, 0);
+        }
+    }
+
+    //Metodo para rotacionar o titulo do jogo
+    void rotateGameTitle()
+    {
+        if (gameTitleZRot > -1080)
+        {
+            gameTitleZRot -= 10;
+            gameTitle.transform.Rotate(0, 0, -10);
+        }
+    }
+
+    void animateGameTitle()
+    {
+        resizeGameTitle();
+        rotateGameTitle();
+    }
+
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
+        //Debug.Log(Input.acceleration.z);
+
+        animateGameTitle();
+
+        
+
+        //Colorindo o texto jogar
+        textColor = RandomColor();
+        textObj.color = textColor;
+
+        //Rotacionando o texto jogar
+        //textTransform = Mathf.Abs(textObj.transform.rotation.y);
+        //textObj.transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 0, 1), 4);
 
         //Imprimindo o valor de rotacao do celular
-        Debug.Log(Input.acceleration.x);
+        //Debug.Log(Input.acceleration.x);
 
     }
+    
 }
