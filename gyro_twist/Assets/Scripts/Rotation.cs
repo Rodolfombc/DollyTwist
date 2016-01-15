@@ -30,88 +30,27 @@ public class Rotation : MonoBehaviour {
             print("User has " + fingerCount + " finger(s) touching the screen");
     }
 
-    /*
-    public static event Action<Vector2> OnResolutionChange;
-    public static event Action<DeviceOrientation> OnOrientationChange;
-    public static float CheckDelay = 0.5f;        // How long to wait until we check again.
-
-    static Vector2 resolution;                    // Current Resolution
-    static DeviceOrientation orientation;        // Current Device Orientation
-    static bool isAlive = true;                    // Keep this script running?
-
-    void Start()
-    {
-        StartCoroutine(CheckForChange());
-    }
-
-    IEnumerator CheckForChange()
-    {
-        resolution = new Vector2(Screen.width, Screen.height);
-        orientation = Input.deviceOrientation;
-
-        while (isAlive)
-        {
-
-            // Check for a Resolution Change
-            if (resolution.x != Screen.width || resolution.y != Screen.height)
-            {
-                resolution = new Vector2(Screen.width, Screen.height);
-                if (OnResolutionChange != null) OnResolutionChange(resolution);
-            }
-
-            // Check for an Orientation Change
-            switch (Input.deviceOrientation)
-            {
-                case DeviceOrientation.Unknown:            // Ignore
-                case DeviceOrientation.FaceUp:            // Ignore
-                case DeviceOrientation.FaceDown:        // Ignore
-                    break;
-                default:
-                    if (orientation != Input.deviceOrientation)
-                    {
-                        orientation = Input.deviceOrientation;
-                        if (OnOrientationChange != null) OnOrientationChange(orientation);
-                    }
-                    break;
-            }
-            Debug.Log(orientation);
-            yield return new WaitForSeconds(CheckDelay);
-        }
-    }
-
-    void OnDestroy()
-    {
-        isAlive = false;
-    }
-    */
-
-
 
     public Image gameTitle;
-    public Text textObj;
-
-    private Color textColor;
-    private float textTransform;
+    public GameObject jogarPrefab;
 
     //Variaveis para o titulo do jogo
     private float gameTitleZRot;
 
+    private bool objectsSpawned;
+
     void Start()
     {
         gameTitleZRot = 0;
+        objectsSpawned = false;
+        jogarPrefab.transform.SetParent(this.GetComponent<Canvas>().gameObject.transform, false);
     }
 
-
-    //Metodo para gerar uma cor aleatoria
-    Color RandomColor()
-    {
-        return new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
-    }
 
     //Metodo para redimensionar o titulo do jogo
     void resizeGameTitle()
     {
-        if(gameTitle.transform.localScale.x < 1.0f)
+        if (gameTitle.transform.localScale.x < 1.0f)
         {
             gameTitle.transform.localScale += new Vector3(0.01f, 0, 0);
         }
@@ -138,24 +77,23 @@ public class Rotation : MonoBehaviour {
         rotateGameTitle();
     }
 
-    // Update is called once per frame
     void FixedUpdate () {
-        //Debug.Log(Input.acceleration.z);
+        //Imprimindo o valor de rotacao do celular
+        //Debug.Log(Input.acceleration.x);
 
         animateGameTitle();
 
-        
-
-        //Colorindo o texto jogar
-        textColor = RandomColor();
-        textObj.color = textColor;
-
-        //Rotacionando o texto jogar
-        //textTransform = Mathf.Abs(textObj.transform.rotation.y);
-        //textObj.transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 0, 1), 4);
-
-        //Imprimindo o valor de rotacao do celular
-        //Debug.Log(Input.acceleration.x);
+        //Quando a animacao do titulo do jogo acabar, apareceremos com os botoes
+        if (gameTitleZRot <= -1080 && gameTitle.transform.localScale.x > 1.0f && gameTitle.transform.localScale.y > 1.0f)
+        {
+            if (!objectsSpawned)
+            {
+                Debug.Log("SPAWNAR GERAL");
+                Instantiate(jogarPrefab, new Vector3(-3.6f, 3.0f, 0.0f), Quaternion.identity);
+                //Debug.Log(jogarPrefab.rectTransform.anchorMin);
+                objectsSpawned = true;
+            }
+        }        
 
     }
     
