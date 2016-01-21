@@ -43,7 +43,6 @@ public class Rotation : MonoBehaviour {
     {
         gameTitleZRot = 0;
         objectsSpawned = false;
-        jogarPrefab.transform.SetParent(this.GetComponent<Canvas>().gameObject.transform, false);
     }
 
 
@@ -89,11 +88,12 @@ public class Rotation : MonoBehaviour {
             if (!objectsSpawned)
             {
                 Debug.Log("SPAWNAR GERAL");
-                Instantiate(jogarPrefab, new Vector3(-3.6f, 3.0f, 0.0f), Quaternion.identity);
+                //Instantiate(jogarPrefab, new Vector3(-3.6f, 3.0f, 0.0f), Quaternion.identity);
                 //Debug.Log(jogarPrefab.rectTransform.anchorMin);
                 objectsSpawned = true;
             }
-        }        
+        }
+        
 
     }
     
