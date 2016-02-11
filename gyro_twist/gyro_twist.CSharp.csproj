@@ -69,9 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Splash_To_Menu.cs" />
+    <Compile Include="Assets\Scripts\generalScripts.cs" />
     <Compile Include="Assets\Scripts\gravityHandler.cs" />
     <Compile Include="Assets\Scripts\mainMenu.cs" />
     <Compile Include="Assets\Scripts\menuBg_Animation.cs" />
+    <Compile Include="Assets\Scripts\play_button.cs" />
     <Compile Include="Assets\Scripts\randomizeColor.cs" />
   </ItemGroup>
   <ItemGroup>

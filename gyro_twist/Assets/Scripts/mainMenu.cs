@@ -1,46 +1,7 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class mainMenu : MonoBehaviour {
-
-    /// <summary>
-    /// Codigo de terceiros
-    /// </summary>
-    void detectClick()
-    {
-        if (Input.GetMouseButtonDown(0))
-            Debug.Log("Pressed left click.");
-
-        if (Input.GetMouseButtonDown(1))
-            Debug.Log("Pressed right click.");
-
-        if (Input.GetMouseButtonDown(2))
-            Debug.Log("Pressed middle click.");
-    }
-
-    /// <summary>
-    /// Codigo de terceiros
-    /// </summary>
-    void detectMultiTouch()
-    {
-        int fingerCount = 0;
-        foreach (Touch touch in Input.touches)
-        {
-            if (touch.phase != TouchPhase.Ended && touch.phase != TouchPhase.Canceled)
-                fingerCount++;
-
-        }
-        if (fingerCount > 0)
-            print("User has " + fingerCount + " finger(s) touching the screen");
-    }
-
-
-
-
-
-
 
     public Image gameTitle;
 
@@ -115,8 +76,8 @@ public class mainMenu : MonoBehaviour {
                 objectsSpawned = true;
             }
         }
-        
 
+        
     }
     
 }

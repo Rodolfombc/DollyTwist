@@ -29,6 +29,14 @@ public class menuBg_Animation : MonoBehaviour {
     void Update ()
     {
         int index = (int)(Time.time * framesPerSecond) % frames.Length;
-        this.GetComponent<Image>().sprite = frames[index];
+        if(this.GetComponent<Image>())
+        {
+            this.GetComponent<Image>().sprite = frames[index];
+        }
+        else
+        {
+            this.GetComponent<SpriteRenderer>().sprite = frames[index];
+        }
+        
     }
 }
