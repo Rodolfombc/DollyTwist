@@ -13,14 +13,14 @@ public class stage_generator : MonoBehaviour {
         bottomPositionY = -4.5f;
         topPositionY = 4.5f;
 
-        nextPositionX = 26.25f;
+        nextPositionX = 18.75f;
 
         initGenerating();
 	}
 
     void initGenerating()
     {
-        InvokeRepeating("choosePosition", 2, 1.0f);
+        InvokeRepeating("choosePosition", 1, 1.5f);
     }
 
     void choosePosition()
@@ -33,7 +33,7 @@ public class stage_generator : MonoBehaviour {
             instanceScale = obj.GetComponent<Transform>().localScale;
             instanceScale.y = -3;
             obj.GetComponent<Transform>().localScale = instanceScale;
-            Debug.Log("Floor at the top");
+            //Debug.Log("Floor at the top");
         }
         else
         {
@@ -41,7 +41,7 @@ public class stage_generator : MonoBehaviour {
             instanceScale = obj.GetComponent<Transform>().localScale;
             instanceScale.y = 3;
             obj.GetComponent<Transform>().localScale = instanceScale;
-            Debug.Log("Floor at the bottom");
+            //Debug.Log("Floor at the bottom");
         }
 
         //Updating the x position of next floor object
@@ -49,9 +49,4 @@ public class stage_generator : MonoBehaviour {
         //Debug.Log(posY);
     }
 	
-	// Update is called once per frame
-	void Update () {
-        
-        
-	}
 }

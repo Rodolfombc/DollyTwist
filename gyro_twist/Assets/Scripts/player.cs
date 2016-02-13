@@ -5,11 +5,17 @@ public class player : MonoBehaviour {
 
     int life;
     Vector2 updatableGravity;
+    Quaternion playerRotation;
+
+    bool collidingWithFloor;
 
     void Start()
     {
-        //life = 3;
+        life = 3;
         updatableGravity = Physics2D.gravity;
+        playerRotation =  transform.rotation;
+
+        collidingWithFloor = false;
     }
 
     //Detect when player collides with another object
@@ -29,6 +35,8 @@ public class player : MonoBehaviour {
         if (coll.gameObject.tag == "floor")
         {
             this.GetComponent<Animator>().Play("player_run");
+            transform.rotation = playerRotation;
+            collidingWithFloor = true;
         }
     }
 
@@ -39,6 +47,8 @@ public class player : MonoBehaviour {
         {
             //Debug.Log("Player not grounded!");
             this.GetComponent<Animator>().Play("player_fall");
+            transform.rotation = playerRotation;
+            collidingWithFloor = false;
         }
             
 
@@ -66,11 +76,42 @@ public class player : MonoBehaviour {
         //Debug.Log(Physics2D.gravity);
     }
 
+    void runPlayer()
+    {
+        // Check if the body's current velocity will result in a collision
+        if ((transform.position.y < -4 || transform.position.y > 4) && collidingWithFloor)
+        {
+            // If so, stop the movement
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, this.GetComponent<Rigidbody2D>().velocity.y);
+            this.GetComponent<Animator>().Play("player_fall");
+            this.GetComponent<Animator>().Stop();
+        }
+        else
+        {
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(5.0f, this.GetComponent<Rigidbody2D>().velocity.y);
+        }
+    }
+
+    void checkLife()
+    {
+        if(transform.position.y < -5.0f || transform.position.y > 5.0f || life < 1)
+        {
+            Debug.Log("MORREUUU");
+        }
+    }
     
     void FixedUpdate () {
         //Updates the gravity according to mobile orientation
         updateGravity(Input.deviceOrientation.ToString());
 
-        this.GetComponent<Rigidbody2D>().velocity = new Vector2(5.0f, this.GetComponent<Rigidbody2D>().velocity.y);
+        runPlayer();
+
+        checkLife();
+
+        //Correcting the player rotation 
+        if(transform.rotation != playerRotation)
+        {
+            transform.rotation = playerRotation;
+        }
     }
 }
