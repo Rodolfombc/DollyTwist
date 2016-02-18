@@ -13,7 +13,7 @@ public class stage_generator : MonoBehaviour {
         bottomPositionY = -4.5f;
         topPositionY = 4.5f;
 
-        nextPositionX = 18.75f;
+        nextPositionX = 18.5f;
 
         initGenerating();
 	}
@@ -45,7 +45,7 @@ public class stage_generator : MonoBehaviour {
         }
 
         //Updating the x position of next floor object
-        nextPositionX += 7.5f;
+        nextPositionX += 7.4f;
         //Debug.Log(posY);
     }
 	

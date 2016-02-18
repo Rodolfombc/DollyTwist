@@ -78,6 +78,8 @@
     <Compile Include="Assets\Scripts\menuBg_Animation.cs" />
     <Compile Include="Assets\Scripts\play_button.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
+    <Compile Include="Assets\Scripts\player_gameOver.cs" />
+    <Compile Include="Assets\Scripts\quit_button.cs" />
     <Compile Include="Assets\Scripts\randomizeColor.cs" />
     <Compile Include="Assets\Scripts\stage_generator.cs" />
   </ItemGroup>
