@@ -71,7 +71,6 @@
     <Compile Include="Assets\Scripts\Splash_To_Menu.cs" />
     <Compile Include="Assets\Scripts\background_movement.cs" />
     <Compile Include="Assets\Scripts\camera_movement.cs" />
-    <Compile Include="Assets\Scripts\floor_deleter.cs" />
     <Compile Include="Assets\Scripts\generalScripts.cs" />
     <Compile Include="Assets\Scripts\gravityHandler.cs" />
     <Compile Include="Assets\Scripts\mainMenu.cs" />
@@ -81,7 +80,7 @@
     <Compile Include="Assets\Scripts\player_gameOver.cs" />
     <Compile Include="Assets\Scripts\quit_button.cs" />
     <Compile Include="Assets\Scripts\randomizeColor.cs" />
-    <Compile Include="Assets\Scripts\stage_generator.cs" />
+    <Compile Include="Assets\Scripts\stage_manager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Music\pasta-de-musicas.txt" />
