@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\camera_movement.cs" />
     <Compile Include="Assets\Scripts\generalScripts.cs" />
     <Compile Include="Assets\Scripts\gravityHandler.cs" />
+    <Compile Include="Assets\Scripts\highscore.cs" />
     <Compile Include="Assets\Scripts\mainMenu.cs" />
     <Compile Include="Assets\Scripts\menuBg_Animation.cs" />
     <Compile Include="Assets\Scripts\play_button.cs" />

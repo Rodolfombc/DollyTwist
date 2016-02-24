@@ -120,7 +120,7 @@ public class player : MonoBehaviour {
             Debug.Log(speed);
             
 
-            goalsText.GetComponent<Text>().text = meters + " meters run!";
+            goalsText.GetComponent<Text>().text = meters + " m corridos!";
             goalsText.GetComponent<Text>().color = new Color(255, 255, 255, 1);
         }
 
@@ -180,7 +180,8 @@ public class player : MonoBehaviour {
     {
         metersUpdater += 0.1f;
         meters = (int)metersUpdater;
-        metersText.GetComponent<Text>().text = meters + " meters";
+        PlayerPrefs.SetInt("score", meters);
+        metersText.GetComponent<Text>().text = meters + " metros";
 
         checkGoal();
 
