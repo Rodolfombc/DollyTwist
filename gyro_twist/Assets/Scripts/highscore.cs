@@ -7,7 +7,8 @@ public class highscore : MonoBehaviour {
 
     void OnMouseDown()
     {
-        Debug.Log("Ver scores");
+        //Debug.Log("Ver scores");
+        Application.LoadLevel("scores");
     }
 
     

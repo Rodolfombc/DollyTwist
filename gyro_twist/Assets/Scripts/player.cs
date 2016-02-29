@@ -54,7 +54,7 @@ public class player : MonoBehaviour {
         if (coll.gameObject.tag == "floor")
         {
             //Debug.Log("Player grounded!");
-            this.GetComponent<Animator>().Play("player_run");
+            this.GetComponent<Animator>().Play("dolly_run");
         }
 
     }
@@ -64,7 +64,7 @@ public class player : MonoBehaviour {
     {
         if (coll.gameObject.tag == "floor")
         {
-            this.GetComponent<Animator>().Play("player_run");
+            this.GetComponent<Animator>().Play("dolly_run");
             transform.rotation = playerRotation;
             collidingWithFloor = true;
         }
@@ -121,7 +121,7 @@ public class player : MonoBehaviour {
             
 
             goalsText.GetComponent<Text>().text = meters + " m corridos!";
-            goalsText.GetComponent<Text>().color = new Color(255, 255, 255, 1);
+            goalsText.GetComponent<Text>().color = new Color(0, 0, 255, 1);
         }
 
         //Animation of the text 
