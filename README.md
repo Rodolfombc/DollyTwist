@@ -11,6 +11,7 @@ It is a game like "Temple Run", where the stage is procedurally generated. It is
 
 The game was all developed in Unity with C#.
 The backend part of the project uses a PHP script that organizes and returns the 8 best obtained scores in the game by everybody that played the game.
+UPDATE: The host of the backend part is no longer working. But creating a new host and putting the php script into it and updating the url inside internet_connection.cs script will make the web part work again!
 
 ### Exporting to Android ###
 
