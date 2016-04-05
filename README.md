@@ -1,29 +1,26 @@
 # GyroTwist #
 
-Aplicação desenvolvida para a matéria de Software para Smartphones lecionada pelo professor Sérgio Barbosa Villas-Boas.
-É um jogo do tipo "Infinite Runner", mas, nesse caso, o jogo é 2D, em que a mecânica principal e única é girar o celular
-para poder prosseguir sobre as plataformas que forem aparecendo pela frente. A pontuação dependerá do tempo em que o jogador
-conseguir sobreviver.
+Application developed for the Smartphone Development course at UFRJ (Federal University of Rio de Janeiro), lectured by Professor Sérgio Barbosa Villas-Boas.
+It is a game like "Temple Run", where the stage is procedurally generated. It is a 2D game in which the core mechanic is to rotate the mobile device to continue running. The score is based on how much you can keep running without falling outside the screen's borders.
 
 
-### Tecnologias utilizadas ###
+### Technologies Used ###
 
 * Unity 5.2.1f1 (64-bit)
 * PHP 5
 
-O jogo foi todo desenvolvido em Unity utilizando a linguagem C#. 
-A parte cloud do projeto utiliza um script PHP que organiza e disponibiliza as 8 melhores pontuações obtidas no jogo 
-por todos que o tiverem jogado.
+The game was all developed in Unity with C#.
+The backend part of the project uses a PHP script that organizes and returns the 8 best obtained scores in the game by everybody that played the game.
 
-### Exportando para Android ###
+### Exporting to Android ###
 
-Para exportar para Android, basta importar esse repositório para uma máquina qualquer que possua o motor Unity instalado (versão >=5.2.1f1).
-Em seguida, abra esse projeto pelo Unity e execute os seguintes comandos:
+In order to export to Android, you only need to download this repo to a computer that has Unity 5.2.1f1 or greater.
+Afterwards, open the unity project and do the following commands:
 
-1) Clique na opção "File" > "Build Settings...";
+1) Go to "File" > "Build Settings...";
 
-2) Em "Platform" selecione "Android";
+2) In "Platform" choose "Android";
 
-3) Clique em "Build";
+3) Build your project by clicking "Build";
 
-Assim, um .apk será gerado e basta colocá-lo no seu android, instalar e jogar!
+With this, a .apk will be generated. Put this .apk on your android device, install the .apk and then you are ready to go!
