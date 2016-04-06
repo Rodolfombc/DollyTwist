@@ -1,4 +1,4 @@
-# GyroTwist #
+# DollyTwist #
 
 Application developed for the Smartphone Development course at UFRJ (Federal University of Rio de Janeiro), lectured by Professor Sérgio Barbosa Villas-Boas.
 It is a game like "Temple Run", where the stage is procedurally generated. It is a 2D game in which the core mechanic is to rotate the mobile device to continue running. The score is based on how much you can keep running without falling outside the screen's borders.
